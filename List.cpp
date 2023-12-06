@@ -74,7 +74,7 @@ Plane List::pop_back() {
     return result;
 }
 
-std::pair<size_t, Plane&> List::get_item(const Plane& value) {
+std::pair<size_t, Plane> List::get_item(const Plane& value) {
     Item* current = first;
     size_t counter = 0;
     if (current == nullptr) {

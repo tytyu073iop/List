@@ -14,7 +14,7 @@ public:
     Plane pop_forward();
     Plane pop_back();
     Plane pop(const Plane& value);
-    std::pair<size_t, Plane&> get_item(const Plane& value);
+    std::pair<size_t, Plane> get_item(const Plane& value);
     void for_each(void(Plane&));
     void for_each(void(const Plane&)) const;
     enum class Errors {

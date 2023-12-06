@@ -1,7 +1,7 @@
 #include "List.h"
 #include <iostream>
 
-size_t counter = 0;
+size_t counter = 0; //NOLINT
 
 int main() {
     List l;
@@ -33,6 +33,18 @@ int main() {
         std::cout << "poping " << q << " plane\n";
         try {
             l.pop(Plane(q));
+        } catch (List::Errors) {
+            std::cout << "NO PLANE!\n";
+        }
+    }
+    {
+        size_t i = 0;
+        std::cout << "What plane to get? ";
+        std::cin >> i;
+        try {
+            std::cout << i <<'\n';
+            auto [c, p] = l.get_item(Plane(i));
+            std::cout << "With " << c << " tries, we found " << p.GetId() << " Plane\n";
         } catch (List::Errors) {
             std::cout << "NO PLANE!\n";
         }
