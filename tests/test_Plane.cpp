@@ -18,13 +18,13 @@ TEST(PlaneTest, GetId) { //NOLINT
 TEST(PlaneTest, CopyConstructor) { //NOLINT
     Plane const p1(10);
     Plane const p2(p1); //NOLINT: I need it!
-    EXPECT_EQ(p1.GetId(), p2.GetId());
+    EXPECT_EQ(10, p2.GetId());
 }
 
 TEST(PlaneTest, CopyAssignmentOperator) { //NOLINT
     Plane const p1(15);
     Plane const p2 = p1; //NOLINT: I need it!
-    EXPECT_EQ(p1.GetId(), p2.GetId());
+    EXPECT_EQ(15, p2.GetId());
 }
 
 TEST(PlaneTest, ComparisonOperator) { //NOLINT
