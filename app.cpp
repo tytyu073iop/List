@@ -1,5 +1,6 @@
 #include "List.h"
 #include <iostream>
+#include <random>
 
 size_t counter = 0; //NOLINT
 
@@ -8,7 +9,7 @@ int main() {
     size_t n = 0;
     std::cout << "How many planes?";
     std::cin >> n;
-    while (n--) { //NOLINT: obvious
+    for (int i = 0; i < n; i++) { //NOLINT: obvious
         l.push_back(Plane());
     }
     std::cout << "list have planes with id's: ";
@@ -29,7 +30,8 @@ int main() {
     std::cout << "poping forward\n";
     l.pop_forward();
     {
-        size_t const q = 3; // (std::rand() % n);
+        std::srand(time(nullptr));
+        size_t q = (std::rand() % n);
         std::cout << "poping " << q << " plane\n";
         try {
             l.pop(Plane(q));
